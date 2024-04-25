@@ -1,0 +1,11 @@
+<div class="insert">
+    <form>
+        <input class="list-input" type="text" name="item" placeholder="write, enter, boom" autocomplete="off" autofocus
+            [(ngModel)]="insElement" (keydown.enter)="save($event)" size=50>
+    </form>
+</div>
+<ul>
+    <li *ngFor="let item of list; index as i">
+            <input (blur)="edit($event, i)" class="list-input" value={{item}}>      
+    </li>
+</ul>

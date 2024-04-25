@@ -16,6 +16,17 @@
     text-transform: uppercase;
 }
 
+.list-input-inlist{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+    border-style: none;
+    outline: none;
+    text-align: left;
+    background-color: rgba($color: #ffffff, $alpha: 0);
+    text-transform: uppercase;
+    margin: 0 1.25rem;
+}
+
 .list-input::placeholder{
     opacity: 20%;
 }
@@ -44,6 +55,35 @@ li{
     margin-left: .625rem;
 }
 
+.qt-badge{
+    background-color: rgb(255, 0, 0);
+    color: #ffffff;
+    width: 1rem;
+    height: 1rem;
+    border: .0625rem solid #ffffff;
+    border-radius: .625rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    font-size: small;
+    margin: .1875rem;
+    padding: .6rem;
+}
+
+.qt-badge-action{
+    background-color: rgb(255, 255, 255);
+    width: .9375rem;
+    height: .9375rem;
+    border: .0625rem solid #000000;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    font-size: small;
+    cursor: pointer;
+    margin: .1875rem;
+}
 
 .actions-visible{
     display: block;

@@ -6,7 +6,7 @@
 </div>
 <ul>
     <li *ngFor="let item of list.getList(); index as i">
-        <button class="qt-badge">{{item.getQt()}}</button>
+        <span class="qt-badge">{{item.getQt()}}</span>
         <!-- <input (blur)="edit($event, i)" class="list-input-inlist" value={{item.getName()}} size={{(item.getName().length)+5}}> -->
         <span class="list-input-inlist">{{item.getName()}}</span>
         <button class="qt-badge-action" (click)="onQtAddClick(i)">+</button>

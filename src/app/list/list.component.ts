@@ -18,11 +18,15 @@ export class ListComponent {
     let input: string = event.target.value.toUpperCase().trim()
     if (input) {
       let item: ListItem;
-      if (typeof parseInt(input[0]) === "number" && input[1] === " ") {
-        item = new ListItem(input.slice(2), parseInt(input[0]));
-      } else {
-        item = new ListItem(input, 1);
+      const maybeMoreThenOne = this.getNumberFromString(input);
+      if (maybeMoreThenOne.valid) {
+        if (maybeMoreThenOne.pacs === 0) maybeMoreThenOne.pacs++;
+        item = new ListItem(input.slice(maybeMoreThenOne.index), maybeMoreThenOne.pacs);
+        this.list.addItem(item);
+        this.insElement = '';
+        return;
       }
+      item = new ListItem(input, 1);
       this.list.addItem(item);
       this.insElement = '';
     }
@@ -46,6 +50,27 @@ export class ListComponent {
 
   onQtDelClick(i: number) {
     this.list.delItem(i);
+  }
+
+  getNumberFromString(checkMe: string): { valid: boolean, index: number, pacs: number } {
+    debugger
+    let response: { valid: boolean, index: number, pacs: number } = {
+      valid: false,
+      index: 0,
+      pacs: 1,
+    }
+    let pacsInStr: string = "";
+    for (let i = 0; i < checkMe.length; i++) {
+      if (isNaN(parseInt(checkMe[i]))) {
+        response.valid = (i > 0 && checkMe[i] === " ") ? true : false;
+        break
+      };
+      pacsInStr = pacsInStr.concat(checkMe[i])
+      response.index++;
+    }
+    response.pacs = parseInt(pacsInStr);
+    response.index++;
+    return response;
   }
 
 }

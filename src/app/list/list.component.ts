@@ -13,6 +13,8 @@ export class ListComponent {
   public list: FinaList = new FinaList();
   public insElement: string = "";
   public displayActionsClass: string = "actions-not-visible";
+  public displayToggle: boolean = true;
+  public helpButtonLabel: string = "+help";
 
   public save(event: any) {
     let input: string = event.target.value.toUpperCase().trim()
@@ -53,7 +55,6 @@ export class ListComponent {
   }
 
   getNumberFromString(checkMe: string): { valid: boolean, index: number, pacs: number } {
-    debugger
     let response: { valid: boolean, index: number, pacs: number } = {
       valid: false,
       index: 0,
@@ -72,5 +73,8 @@ export class ListComponent {
     response.index++;
     return response;
   }
-
+  onDisplayToggle() {
+    this.displayToggle = !this.displayToggle;
+    this.helpButtonLabel = (this.displayToggle) ?  "+help" : "-help"
+  }
 }

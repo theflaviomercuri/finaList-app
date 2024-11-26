@@ -32,7 +32,7 @@
     opacity: 20%;
 }
 
-ul{
+.list-ul{
     margin-top: 1.5625rem;
     display: flex;
     flex-direction: column;
@@ -40,7 +40,7 @@ ul{
     justify-content: center;
 }
 
-li{
+.list-li{
     display: flex;
     // flex-direction: column;
     align-items: center;
@@ -62,7 +62,7 @@ li{
     // font-size: small;
 }
 
-.qt-badge-action{
+.qt-actions{
     background-color: rgb(255, 255, 255);
     width: .9375rem;
     height: .9375rem;
@@ -74,6 +74,30 @@ li{
     font-size: small;
     cursor: pointer;
     margin: .1875rem;
+}
+
+.generic-actions{
+    background-color: rgb(255, 255, 255);
+    width: fit-content;
+    height: .9375rem;
+    border: .0625rem solid #000000;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    font-size: small;
+    cursor: pointer;
+    margin: .1875rem;
+    padding: 1rem;
+}
+
+.footer-actions-wrapper{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .actions-visible{
